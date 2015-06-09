@@ -1,24 +1,18 @@
 #!/bin/bash         
 
-
-#achtung, das skript ist jetzt für KDE optimiert!!
-
-#die nächste zeile kann verwendet werden, wenn zenity benutzt wird:
+#The following line uses Zenity to show a dialog:
 time=$(zenity --entry --text "How many minutes do you want to be offline?")
 #time=$(kdialog --title "Offline Time" --inputbox "How many minutes do you want to be offline?" "60")
 
 
 time=`expr $time \* 60`
 
+#disconnecting the internet with nmcli:
 nmcli nm enable false
-
-counter() {
-sleep 10;  time=`expr $time - 10`
-}
 
 while [ $time -gt 0 ]
 	do
-		counter
+		sleep 10;  time=`expr $time - 10`
 	done
 	
 sleep 5; 	
