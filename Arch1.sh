@@ -2,7 +2,9 @@
 
 echo 'How many minutes do you want to be offline?'
 
-if [ -x "$1" ]; then
+read time
+
+if [ time "$1" ]; then
 
 	#time=`expr $time \* 60`
 	time=60
