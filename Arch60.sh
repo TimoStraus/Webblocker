@@ -2,7 +2,7 @@
 
 echo 'How many minutes do you want to be offline?'
 
-time=20
+time=3600
 
 nmcli dev disconnect enp1s0f0
 
