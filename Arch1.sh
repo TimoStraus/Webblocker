@@ -2,9 +2,7 @@
 
 echo 'How many minutes do you want to be offline?'
 
-read time
-
-time=`expr $time \* 60`
+time=20
 
 nmcli dev disconnect enp1s0f0
 
